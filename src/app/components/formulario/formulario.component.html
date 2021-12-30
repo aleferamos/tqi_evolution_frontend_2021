@@ -1,16 +1,16 @@
 
-
+<form [formGroup]="listaDadosFormulario" (ngSubmit)="dispararFuncao()">
     <div class="flex align-content-center flex-wrap justify-content-center" style="min-height: 97vh">
       <div class="col-8 sm:col-4 md:col-4  lg:col-4 xl:col-3">
         <div class="flex flex-column card-container green-container">
           <div class="img">
               <img src="/assets/banner2.png" width="100%">
           </div>
-            <div class="form"><input type="text" class="p-inputtext-sm" placeholder="Nome completo" pInputText /></div>
-            <div class="form"><input type="text" class="p-inputtext-sm" placeholder="E-mail" pInputText /></div>
-            <div class="form"><input type="password" class="p-inputtext-sm" placeholder="Senha" pInputText /></div>
-            <div class="form"><button pButton pRipple type="button" label="Cadastrar"></button></div>
+          <div *ngFor="let info of inputList">
+            <div class="{{info.classDiv}}"><input type="{{info.type}}" formControlName="{{info.field}}" class="{{info.inputClass}}"  placeholder="{{info.placeHolder}}" pInputText /></div>
+          </div>
+          <div class="form"><button pButton pRipple type="submit" label="{{nomeBtn}}"></button></div>
         </div>
     </div>
     </div>
-
+  </form>
