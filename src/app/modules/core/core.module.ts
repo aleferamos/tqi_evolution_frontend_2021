@@ -8,6 +8,9 @@ import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import {ToastModule} from 'primeng/toast';
+import {SkeletonModule} from 'primeng/skeleton';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -19,7 +22,9 @@ import {ToastModule} from 'primeng/toast';
     CardModule,
     ButtonModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    SkeletonModule,
+    ProgressSpinnerModule
   ],
   exports: [
     CalendarModule,
@@ -28,7 +33,9 @@ import {ToastModule} from 'primeng/toast';
     CardModule,
     ButtonModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    SkeletonModule,
+    ProgressSpinnerModule
   ]
 })
 export class CoreModule { }
