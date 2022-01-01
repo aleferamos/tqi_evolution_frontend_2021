@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
+import { HttpClientModule } from '@angular/common/http';
+import {ToastModule} from 'primeng/toast';
 @NgModule({
   declarations: [],
   imports: [
@@ -15,14 +17,18 @@ import {ButtonModule} from 'primeng/button';
     InputTextModule,
     BrowserAnimationsModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule,
+    ToastModule
   ],
   exports: [
     CalendarModule,
     FormsModule,
     InputTextModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule,
+    ToastModule
   ]
 })
 export class CoreModule { }

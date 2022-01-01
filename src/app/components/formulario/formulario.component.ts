@@ -1,7 +1,10 @@
+import { LoginService } from 'src/app/shared/service/login.service';
+import { ICliente } from './../../shared/interface/ICliente';
 
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { IClassInput } from 'src/app/shared/interface/IClassInput';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-formulario',
@@ -14,17 +17,18 @@ export class FormularioComponent implements OnInit {
   @Input() inputList:IClassInput[] = []
   @Input() listaDadosFormulario: FormGroup;
 
-  email: string;
-  constructor() {
+  cliente: ICliente = {} as ICliente;
+
+  constructor(
+    private loginService: LoginService,
+    private messageService: MessageService) {
   }
 
   ngOnInit(): void {
 
   }
 
-  @Input() dispararFuncao(){
-
-  }
+  @Input() async dispararFuncao(): Promise<void>{}
 
 
 
