@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../../shared/service/LocalStorage.service';
 import { LoginService } from 'src/app/shared/service/login.service';
 import { ICliente } from './../../shared/interface/ICliente';
 
@@ -21,7 +22,8 @@ export class FormularioComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private messageService: MessageService) {
+    private messageService: MessageService,
+    private localStorageService: LocalStorageService) {
   }
 
   ngOnInit(): void {
