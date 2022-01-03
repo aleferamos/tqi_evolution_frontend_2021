@@ -1,3 +1,4 @@
+import { IToken } from './../../../shared/interface/IToken';
 import { ILocalStorage } from './../../../shared/interface/ILocalStorage';
 import { LocalStorageService } from './../../../shared/service/LocalStorage.service';
 import { ICliente } from './../../../shared/interface/ICliente';
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   cliente: ICliente = {} as ICliente;
   localStorage: ILocalStorage = {} as ILocalStorage;
+  token: IToken;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,11 +45,16 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.localStorage.token){
-      setTimeout(function() {
-        window.location.href = "/home"
-      }, 0);
-    }
+    const token = {
+      token: window.localStorage.getItem('token')
+    };
+
+    this.loginService.tokenIsValid(token).then( data => {
+       if(data){
+        window.location.href = '/home'
+      }
+    })
+
   }
 
 

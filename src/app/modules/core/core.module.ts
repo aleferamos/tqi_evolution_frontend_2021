@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {ToastModule} from 'primeng/toast';
 import {SkeletonModule} from 'primeng/skeleton';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {TableModule} from 'primeng/table';
+import {StyleClassModule} from 'primeng/styleclass';
 
 @NgModule({
   declarations: [],
@@ -24,7 +26,9 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     HttpClientModule,
     ToastModule,
     SkeletonModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    TableModule,
+    StyleClassModule
   ],
   exports: [
     CalendarModule,
@@ -35,7 +39,9 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     HttpClientModule,
     ToastModule,
     SkeletonModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    TableModule,
+    StyleClassModule
   ]
 })
 export class CoreModule { }

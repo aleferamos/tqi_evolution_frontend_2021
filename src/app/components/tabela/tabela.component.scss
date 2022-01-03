@@ -1,0 +1,63 @@
+::ng-deep .p-datatable .p-datatable-header {
+  background: rgb(38, 181, 38);
+  color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-width: 1px 0 1px 0;
+  padding: 0;
+  padding: 0.2em 0em 0em 0.9em;
+  height: 2em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+}
+
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  text-align: left;
+  padding: 0.05em 0em 0em 0em;
+  height: 2em;
+  border: 1px solid #e9ecef;
+  border-width: 0 0 1px 0;
+  font-weight: 600;
+  color: #ffffff;
+  background: #005fab;
+  transition: box-shadow 0.2s;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  text-align: center;
+  border: 1px solid #e9ecef;
+  border-width: 0 0 1px 0;
+  background-color: rgb(206, 206, 206);
+  padding: 0.5rem 0.5rem;
+  color: rgb(70, 70, 70);
+
+}
+
+.th0 {
+  width: 2em;
+  text-align: center !important;
+}
+
+.th1 {
+  width: 5em;
+  text-align: center !important;
+}
+
+.th2 {
+  width: 8em;
+  text-align: center !important;
+}
+
+.th3 {
+  width: 35em;
+  text-align: center !important;
+}
+
+.detalhes {
+  cursor: pointer;
+}
+
+.detalhes:hover {
+  color: #005fab;
+}
