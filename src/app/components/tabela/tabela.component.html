@@ -17,7 +17,7 @@
               <span>{{ registros[dados.field] }}</span>
             </div>
             <div *ngIf="dados.statusClass">
-              <span [ngStyle]="registros[dados.field] === 'APROVADO' ? {'color': 'green'} : {'color': 'black'} ">{{ statusClass(registros[dados.field]) }}</span>
+              <span>{{ statusClass(registros[dados.field]) }}</span>
             </div>
 
             <i class="pi pi-window-maximize" [ngClass]="'detalhes'" *ngIf="dados.icon"></i>

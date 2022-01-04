@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
   @Output() nomeBtn:string = "Entrar";
   @Output() listaInputs:IClassInput[] = [];
   @Output() listaDadosFormulario: FormGroup = {} as FormGroup;
+  @Output() btnCadastrar: boolean = true;
+  @Output() btnEntrar: boolean = true;
 
   cliente: ICliente = {} as ICliente;
   localStorage: ILocalStorage = {} as ILocalStorage;
@@ -77,5 +79,11 @@ export class LoginComponent implements OnInit {
       })
 
 
+  }
+
+  async cadastrar(): Promise<void> {
+    setTimeout(function() {
+      window.location.href = "/cadastrar"
+    }, 1100);
   }
 }

@@ -1,16 +1,48 @@
-
-<form [formGroup]="listaDadosFormulario" (ngSubmit)="dispararFuncao()">
+  <p-tabView [activeIndex]="index">
+    <p-tabPanel header="Informações Pessoais" >
+      <form [formGroup]="listaDadosFormulario" (ngSubmit)="dispararFuncao()">
+        <div class="flex align-content-center flex-wrap justify-content-center" style="min-height: 97vh">
+          <div class="col-8 sm:col-4 md:col-4  lg:col-4 xl:col-3">
+            <div class="flex flex-column card-container green-container">
+              <div class="img">
+                  <img src="/assets/banner2.png" width="100%">
+              </div>
+              <div *ngFor="let info of inputList">
+                <div class="{{info.classDiv}}"><input type="{{info.type}}" formControlName="{{info.field}}" class="{{info.inputClass}}"  placeholder="{{info.placeHolder}}" pInputText /></div>
+              </div>
+              <div class="grid">
+                <div class="col-5" *ngIf="btnEntrar">
+                  <button pButton pRipple type="submit" label="{{nomeBtn}}"></button>
+                </div>
+                <div class="col-7" *ngIf="btnCadastrar">
+                  <button pButton pRipple type="button" label="Cadastrar" (click)="cadastrar()" class="p-button-rounded"></button>
+                </div>
+                <div class="col-7" *ngIf="btnProximo">
+                  <button pButton pRipple type="button" label="Proximo" (click)="proximo()" class="p-button-rounded"></button>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </form>
+</p-tabPanel>
+<p-tabPanel header="Endereco">
+  <form [formGroup]="listaDadosFormularioEndereco" (ngSubmit)="dispararFuncao()">
     <div class="flex align-content-center flex-wrap justify-content-center" style="min-height: 97vh">
       <div class="col-8 sm:col-4 md:col-4  lg:col-4 xl:col-3">
         <div class="flex flex-column card-container green-container">
-          <div class="img">
-              <img src="/assets/banner2.png" width="100%">
-          </div>
-          <div *ngFor="let info of inputList">
+          <div *ngFor="let info of inputListEndereco">
             <div class="{{info.classDiv}}"><input type="{{info.type}}" formControlName="{{info.field}}" class="{{info.inputClass}}"  placeholder="{{info.placeHolder}}" pInputText /></div>
           </div>
-          <div class="form"><button pButton pRipple type="submit" label="{{nomeBtn}}"></button></div>
+          <div class="grid">
+            <div class="col-7" *ngIf="btnCadastrarTudo">
+              <button pButton pRipple type="button" label="Cadastrar" (click)="cadastrar()" class="p-button-rounded"></button>
+            </div>
+          </div>
         </div>
     </div>
     </div>
   </form>
+</p-tabPanel>
+</p-tabView>
+

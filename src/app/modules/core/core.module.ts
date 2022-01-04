@@ -12,6 +12,7 @@ import {SkeletonModule} from 'primeng/skeleton';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {TableModule} from 'primeng/table';
 import {StyleClassModule} from 'primeng/styleclass';
+import {TabViewModule} from 'primeng/tabview';
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import {StyleClassModule} from 'primeng/styleclass';
     SkeletonModule,
     ProgressSpinnerModule,
     TableModule,
-    StyleClassModule
+    StyleClassModule,
+    TabViewModule
   ],
   exports: [
     CalendarModule,
@@ -41,7 +43,8 @@ import {StyleClassModule} from 'primeng/styleclass';
     SkeletonModule,
     ProgressSpinnerModule,
     TableModule,
-    StyleClassModule
+    StyleClassModule,
+    TabViewModule
   ]
 })
 export class CoreModule { }

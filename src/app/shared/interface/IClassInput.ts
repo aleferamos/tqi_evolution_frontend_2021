@@ -3,5 +3,5 @@ export interface IClassInput {
   type?: string;
   inputClass?: string;
   placeHolder?: string;
-  field: string;
+  field?: string;
 }

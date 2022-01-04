@@ -53,3 +53,11 @@
   height: 60px;
   margin-bottom: 1vh;
 }
+
+// .col-6, .col-3 {
+//   border: solid 1px;
+// }
+
+::ng-deep button {
+  width: 100%;
+}
