@@ -1,0 +1,82 @@
+::ng-deep .grid {
+  margin-top: 0.01em;
+  margin: 0;
+}
+
+::ng-deep .p-inputtext.p-inputtext-sm {
+  width: 100%;
+}
+
+.form {
+  margin-top: 1em;
+}
+
+.p-button {
+  color: #ffffff;
+  background: #005fab;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  /* transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s; */
+  border-radius: 0px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.p-button:hover {
+  background: #005fab;
+}
+
+.p-button:focus {
+  background-color: #005fab;
+  box-shadow: none;
+}
+
+::ng-deep .p-inputtext {
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  border: 1px solid #727272;
+  border-radius: 2px;
+}
+
+:host ::ng-deep .p-inputtext:focus {
+  box-shadow: none;
+  border: 1px solid #727272;
+}
+
+:host ::ng-deep .p-inputtext:hover {
+  box-shadow: none;
+  border: 1px solid #727272;
+}
+
+.img {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 1vh;
+}
+
+// .col-6, .col-3 {
+//   border: solid 1px;
+// }
+
+::ng-deep button {
+  width: 100%;
+}
+
+.h1 {
+  text-align: center;
+  color: #777777;
+}
+
+.icon {
+  margin-top: 0.30em;
+}
+
+::ng-deep .p-toast .p-toast-message.p-toast-message-error {
+  z-index: 999;
+  background-color: #005fab;
+  color: white;
+  border: solid rgb(38, 181, 38);
+  border-width: 0 0 0 6px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.1rem;
+}

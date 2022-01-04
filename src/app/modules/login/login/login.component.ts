@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
         LocalStorageService.prototype.setLocalStorage('data', (moment(data)).format('DD-MM-YYYY'))
         setTimeout(function() {
           window.location.href = "/home"
-        }, 1100);
+        }, 800);
 
       }).catch(err => {
         this.messageService.add({severity: 'error',
@@ -84,6 +84,6 @@ export class LoginComponent implements OnInit {
   async cadastrar(): Promise<void> {
     setTimeout(function() {
       window.location.href = "/cadastrar"
-    }, 1100);
+    }, 700);
   }
 }

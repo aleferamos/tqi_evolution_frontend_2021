@@ -1,7 +1,12 @@
+import { ICadastrarUsuario } from './../../../shared/interface/ICadastrarUsuario';
+import { CadastroUsuarioService } from './../../../shared/service/CadastroUsuario.service';
+import { IEndereco } from './../../../shared/interface/IEndereco';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { IClassInput } from 'src/app/shared/interface/IClassInput';
 import { MessageService } from 'primeng/api';
 import { Component, OnInit, Output, Input } from '@angular/core';
+import { IUsuario } from 'src/app/shared/interface/IUsuario';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-cadastrar',
@@ -15,13 +20,20 @@ export class CadastrarComponent implements OnInit {
   @Output() inputListEndereco:IClassInput[] = []
   @Output() listaDadosFormulario: FormGroup = {} as FormGroup;
   @Input() listaDadosFormularioEndereco: FormGroup;
-  @Output() btnCadastrar: boolean;
+  @Output() btnCadastrar: boolean = true;
   @Output() btnEntrar: boolean;
   @Output() btnProximo: boolean = true;
   @Output() btnCadastrarTudo: boolean = true;
   @Input() index: number = 0;
 
-  constructor(private formBuilder: FormBuilder) {
+  usuario: IUsuario = {} as IUsuario;
+  endereco: IEndereco = {} as IEndereco;
+  cadastrarUsuario: ICadastrarUsuario = {} as ICadastrarUsuario;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private cadastrarUsuarioService: CadastroUsuarioService,
+    private messageService: MessageService) {
     this.listaInputs = [
       {classDiv:'form', type: 'text', inputClass: 'p-inputtext-sm', placeHolder:'Nome', field: 'nome'},
       {classDiv:'form', type: 'text', inputClass: 'p-inputtext-sm', placeHolder:'Email', field: 'email'},
@@ -58,6 +70,33 @@ export class CadastrarComponent implements OnInit {
   }
 
   @Output() async cadastrar():Promise<void>{
+    this.usuario.nome = this.listaDadosFormulario.value.nome
+    this.usuario.email = this.listaDadosFormulario.value.email
+    this.usuario.cpf = this.listaDadosFormulario.value.cpf
+    this.usuario.rg = this.listaDadosFormulario.value.rg
+    this.usuario.renda = this.listaDadosFormulario.value.renda
+    this.usuario.senha = this.listaDadosFormulario.value.senha
+
+    this.endereco.apelido = this.listaDadosFormularioEndereco.value.apelido
+    this.endereco.rua = this.listaDadosFormularioEndereco.value.rua
+    this.endereco.numero = this.listaDadosFormularioEndereco.value.numero
+    this.endereco.cep = this.listaDadosFormularioEndereco.value.cep
+
+    this.cadastrarUsuario.cliente = this.usuario;
+    this.cadastrarUsuario.endereco = this.endereco;
+    console.log(this.cadastrarUsuario);
+
+    await this.cadastrarUsuarioService.cadastrar(this.cadastrarUsuario).then(err => {
+      this.messageService.add({severity: 'error',
+      detail: "Usuario cadastrado com sucesso" });
+      setTimeout(function() {
+        window.location.href = "/login"
+      }, 1100);
+
+    }).catch(err => {
+      this.messageService.add({severity: 'error',
+      detail: "Campos vazios estão vazios ou email já consta no sistema"});
+    })
 
   }
 

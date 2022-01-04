@@ -1,12 +1,60 @@
 
-    <app-formulario
-    [nomeBtn]="nomeBtn"
-    [inputList]="listaInputs"
-    [inputListEndereco]="inputListEndereco"
-    [listaDadosFormulario]="listaDadosFormulario"
-    [listaDadosFormularioEndereco]="listaDadosFormularioEndereco"
-    [btnProximo]="btnProximo"
-    [btnCadastrarTudo]="btnCadastrarTudo"
-    [cadastrar]="cadastrar"
-    [proximo]="proximo"
-    ></app-formulario>
+<p-toast>
+  <ng-template let-message pTemplate="message">
+    <div class="p-flex p-flex-column" style="flex: 1">
+        <div class="p-text-center">
+            <div class="grid">
+              <div class="col-2"><i class="pi pi-user icon" style="font-size: 2rem"></i></div>
+              <div class="col-8"><p>{{message.detail}}</p></div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+</p-toast>
+
+<p-tabView [activeIndex]="index">
+<p-tabPanel header="Informações Pessoais" >
+  <form [formGroup]="listaDadosFormulario" >
+    <div class="flex align-content-center flex-wrap justify-content-center" style="min-height: 97vh">
+      <div class="col-8 sm:col-4 md:col-4  lg:col-4 xl:col-3">
+        <div class="flex flex-column card-container green-container">
+          <div class="img">
+              <h1 class="h1">Cadastrar usuário</h1>
+          </div>
+          <div *ngFor="let info of listaInputs">
+            <div class="{{info.classDiv}}"><input type="{{info.type}}" formControlName="{{info.field}}" class="{{info.inputClass}}"  placeholder="{{info.placeHolder}}" pInputText /></div>
+          </div>
+          <div class="grid">
+            <div class="col-7" >
+              <button pButton pRipple type="button" label="Proximo" (click)="proximo()" class="p-button-rounded"></button>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </form>
+</p-tabPanel>
+
+<p-tabPanel header="Endereco">
+  <form [formGroup]="listaDadosFormularioEndereco" >
+    <div class="flex align-content-center flex-wrap justify-content-center" style="min-height: 97vh">
+      <div class="col-8 sm:col-4 md:col-4  lg:col-4 xl:col-3">
+        <div class="flex flex-column card-container green-container">
+          <div class="img">
+            <h1 class="h1">Endereco</h1>
+        </div>
+          <div *ngFor="let info of inputListEndereco">
+            <div class="{{info.classDiv}}"><input type="{{info.type}}" formControlName="{{info.field}}" class="{{info.inputClass}}"  placeholder="{{info.placeHolder}}" pInputText /></div>
+          </div>
+          <div class="grid">
+            <div class="col-7">
+              <button pButton pRipple type="button" label="Cadastrar" (click)="cadastrar()" class="p-button-rounded"></button>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </form>
+</p-tabPanel>
+</p-tabView>
+
