@@ -18,5 +18,6 @@ export class HomeComponent implements OnInit {
   cliente: ICliente = {} as ICliente;
 
   ngOnInit(): void {}
+  visibleSidebar1;
 
 }

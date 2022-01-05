@@ -1,3 +1,5 @@
+import { EmprestimoService } from './../../shared/service/emprestimo.service';
+import { IEmprestimo } from './../../shared/interface/IEmprestimo';
 import { CadastrarComponent } from './../../modules/cadastrar/cadastrar/cadastrar.component';
 import { LocalStorageService } from './../../shared/service/LocalStorage.service';
 import { LoginService } from 'src/app/shared/service/login.service';
@@ -20,6 +22,7 @@ export class FormularioComponent implements OnInit {
   @Input() inputListDate: IClassInput [] = []
   @Input() inputListEndereco:IClassInput[] = []
   @Input() listaDadosFormulario: FormGroup;
+  @Input() listaDadosFormularioData: FormGroup;
   @Input() listaDadosFormularioEndereco: FormGroup;
   @Input() btnCadastrar: boolean;
   @Input() btnEntrar: boolean;
@@ -28,11 +31,13 @@ export class FormularioComponent implements OnInit {
   cliente: ICliente = {} as ICliente;
   selectedTab: number;
   @Input() index: number = 0;
+  emprestimo: IEmprestimo = {} as IEmprestimo;
 
   constructor(
     private loginService: LoginService,
     private messageService: MessageService,
-    private localStorageService: LocalStorageService) {
+    private localStorageService: LocalStorageService,
+    private emprestimoService: EmprestimoService) {
   }
 
   ngOnInit(): void {

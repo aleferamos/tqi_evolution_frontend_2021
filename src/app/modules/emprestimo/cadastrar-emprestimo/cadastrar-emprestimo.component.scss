@@ -1,0 +1,12 @@
+.icon {
+  margin-top: 0.30em;
+}
+
+::ng-deep .p-toast .p-toast-message.p-toast-message-error {
+  background-color: #005fab;
+  color: white;
+  border: solid rgb(38, 181, 38);
+  border-width: 0 0 0 6px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.1rem;
+}

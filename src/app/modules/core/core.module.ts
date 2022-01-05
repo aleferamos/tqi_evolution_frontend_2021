@@ -14,6 +14,8 @@ import {TableModule} from 'primeng/table';
 import {StyleClassModule} from 'primeng/styleclass';
 import {TabViewModule} from 'primeng/tabview';
 import {InputMaskModule} from 'primeng/inputmask';
+import {SidebarModule} from 'primeng/sidebar';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -31,7 +33,8 @@ import {InputMaskModule} from 'primeng/inputmask';
     TableModule,
     StyleClassModule,
     TabViewModule,
-    InputMaskModule
+    InputMaskModule,
+    SidebarModule
   ],
   exports: [
     CalendarModule,
@@ -46,7 +49,8 @@ import {InputMaskModule} from 'primeng/inputmask';
     TableModule,
     StyleClassModule,
     TabViewModule,
-    InputMaskModule
+    InputMaskModule,
+    SidebarModule
   ]
 })
 export class CoreModule { }

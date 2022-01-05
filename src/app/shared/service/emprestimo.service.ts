@@ -23,4 +23,10 @@ export class EmprestimoService {
     return await this.http.get<IPage<IEmprestimo>>(url,
       {headers: LocalStorageService.prototype.getAuthorization(this.localStorage.token)}).toPromise();
   }
+
+  async solicitar(emprestimo: IEmprestimo): Promise<void> {
+    const url = `${this.urlBase}/emprestimo/novo`
+    await this.http.post(url, emprestimo,
+      {headers: LocalStorageService.prototype.getAuthorization(this.localStorage.token)}).toPromise();
+  }
 }
