@@ -1,3 +1,4 @@
+import { CadastrarEmprestimoComponent } from './modules/emprestimo/cadastrar-emprestimo/cadastrar-emprestimo.component';
 import { CadastrarComponent } from './modules/cadastrar/cadastrar/cadastrar.component';
 import { ConsultarTodosComponent } from './modules/emprestimo/consultar-todos/consultar-todos.component';
 import { LoginComponent } from './modules/login/login/login.component';
@@ -19,7 +20,8 @@ import { TabelaComponent } from './components/tabela/tabela.component';
     FormularioComponent,
     ConsultarTodosComponent,
     TabelaComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    CadastrarEmprestimoComponent
   ],
   imports: [
     BrowserModule,
