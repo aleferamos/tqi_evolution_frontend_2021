@@ -1,5 +1,8 @@
+
 <app-tabela
 [labels]="colunas"
 [listaRegistros]="listaEmprestimos"
 [colunas]="colunas"
 ></app-tabela>
+<button pButton pRipple type="button" label="Voltar" icon="pi pi-replay" (click)="voltar('/home')" class="p-button-info"></button>
+<button pButton pRipple type="button" label="Solicitar emprestimo" icon="pi pi-plus" (click)="voltar('emprestimo/solicitar')" class="p-button-info"></button>

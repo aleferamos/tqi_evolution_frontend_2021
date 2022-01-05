@@ -40,6 +40,11 @@ export class ConsultarTodosComponent implements OnInit {
     this.listaEmprestimos = result.content
   }
 
+  voltar(url: string){
+    setTimeout(function() {
+      window.location.href = url
+    }, 300);
+  }
 
 
 }

@@ -1,3 +1,4 @@
+import { IMenuItem } from './../../../shared/interface/IMenuItem';
 import { ICadastrarUsuario } from './../../../shared/interface/ICadastrarUsuario';
 import { CadastroUsuarioService } from './../../../shared/service/CadastroUsuario.service';
 import { IEndereco } from './../../../shared/interface/IEndereco';
@@ -29,7 +30,7 @@ export class CadastrarComponent implements OnInit {
   usuario: IUsuario = {} as IUsuario;
   endereco: IEndereco = {} as IEndereco;
   cadastrarUsuario: ICadastrarUsuario = {} as ICadastrarUsuario;
-
+  items: IMenuItem [] = []
   constructor(
     private formBuilder: FormBuilder,
     private cadastrarUsuarioService: CadastroUsuarioService,
@@ -63,6 +64,12 @@ export class CadastrarComponent implements OnInit {
       numero: [null],
       cep: [null],
     })
+
+    this.items = [
+      {label: 'Step 1'},
+      {label: 'Step 2'},
+      {label: 'Step 3'}
+  ];
 
   }
 
@@ -102,5 +109,11 @@ export class CadastrarComponent implements OnInit {
 
   @Input() async proximo(): Promise<void> {
     this.index = 1;
+  }
+
+  voltar(){
+    setTimeout(function() {
+      window.location.href = "/home"
+    }, 300);
   }
 }

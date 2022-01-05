@@ -10,3 +10,22 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.1rem;
 }
+
+.voltar {
+  width: 8em;
+  height: 2em;
+  position: relative;
+  bottom: 16.5em;
+  left: 49em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  background-color: #0288d1;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  i {
+    margin-right: 1em;
+    cursor: pointer;
+  }
+}

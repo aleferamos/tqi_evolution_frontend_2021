@@ -47,9 +47,7 @@ export class CadastrarEmprestimoComponent implements OnInit {
   async autenticar(){
   }
 
-  async cadastrar(): Promise<void> {
-    console.log(this.emprestimo);
-
+  @Output() async cadastrar(): Promise<void> {
     this.emprestimo.valor = this.listaDadosFormulario.value.valor;
     this.emprestimo.dataPrimeiraParcela = this.listaDadosFormulario.value.dataPrimeiraParcela;
     this.emprestimo.quantidadeParcelas = this.listaDadosFormulario.value.quantidadeParcelas;
@@ -67,6 +65,15 @@ export class CadastrarEmprestimoComponent implements OnInit {
       }, 800);
 
     }).catch(err => {
+      if(this.emprestimo.valor === null || this.emprestimo.dataPrimeiraParcela === null || this.emprestimo.quantidadeParcelas === null){
+        console.log("Eentrou");
+        console.log(this.emprestimo);
+
+        this.messageService.add({severity:'error', detail:'Alguns campos estão vazios!'});
+      }
+
+
+
       if(this.emprestimo.quantidadeParcelas > 60){
         this.messageService.add({severity:'error', detail:'Quantidade de parcelas não pode ser maior que 60!'});
       }
@@ -77,8 +84,9 @@ export class CadastrarEmprestimoComponent implements OnInit {
     })
   }
 
-  ToastData() {
-
+  voltar(){
+    setTimeout(function() {
+      window.location.href = "/home"
+    }, 300);
   }
-
 }

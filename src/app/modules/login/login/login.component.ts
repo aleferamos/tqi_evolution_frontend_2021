@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
 
       }).catch(err => {
         this.messageService.add({severity: 'error',
-        detail: "Login ou senha incorretos!"});
+        detail: "Login ou senha inválidos!"});
       })
 
 
