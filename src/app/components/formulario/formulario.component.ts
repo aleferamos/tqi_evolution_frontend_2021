@@ -18,6 +18,7 @@ import { MessageService } from 'primeng/api';
 export class FormularioComponent implements OnInit {
 
   @Input() nomeBtn:string;
+  @Input() nomeCadastrar:string;
   @Input() inputList:IClassInput[] = []
   @Input() inputListDate: IClassInput [] = []
   @Input() inputListEndereco:IClassInput[] = []

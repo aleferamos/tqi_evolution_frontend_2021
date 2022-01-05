@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   @Output() listaDadosFormulario: FormGroup = {} as FormGroup;
   @Output() btnCadastrar: boolean = true;
   @Output() btnEntrar: boolean = true;
+  @Output() nomeCadastrar:string = "Cadastrar";
 
   cliente: ICliente = {} as ICliente;
   localStorage: ILocalStorage = {} as ILocalStorage;
