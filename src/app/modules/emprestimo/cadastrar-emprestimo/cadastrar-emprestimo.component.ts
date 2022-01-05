@@ -14,7 +14,7 @@ export class CadastrarEmprestimoComponent implements OnInit {
   @Output() listaInputs:IClassInput[] = [];
   @Output() listaDadosFormulario: FormGroup = {} as FormGroup;
   @Output() btnCadastrar: boolean = true;
-
+  @Output() inputListDate: IClassInput [] = []
   constructor(
     private formBuilder: FormBuilder
   ) {
@@ -28,6 +28,10 @@ export class CadastrarEmprestimoComponent implements OnInit {
       dataPrimeiraParcela: [null],
       quantidadeParcelas: [null]
     })
+
+    this.inputListDate = [
+      {placeHolder:'Data da primeira parcela', field: 'dataPrimeiraParcela'},
+    ]
   }
 
   ngOnInit(): void {
@@ -37,9 +41,7 @@ export class CadastrarEmprestimoComponent implements OnInit {
   }
 
   async cadastrar(): Promise<void> {
-    setTimeout(function() {
-      window.location.href = "/cadastrar"
-    }, 700);
+
   }
 
 }

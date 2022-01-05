@@ -7,10 +7,6 @@
   width: 100%;
 }
 
-.form {
-  margin-top: 1em;
-}
-
 .p-button {
   color: #ffffff;
   background: #005fab;
@@ -64,4 +60,9 @@
 
 ::ng-deep .p-tabview .p-tabview-nav {
 
+}
+
+:host ::ng-deep .p-inputtext {
+  width: 100%;
+  margin-top: 1em;
 }

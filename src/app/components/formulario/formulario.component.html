@@ -9,6 +9,10 @@
           <div *ngFor="let info of inputList">
             <div class="{{info.classDiv}}"><input type="{{info.type}}" formControlName="{{info.field}}" class="{{info.inputClass}}"  placeholder="{{info.placeHolder}}" pInputText /></div>
           </div>
+
+          <div *ngFor="let info of inputListDate">
+            <div class="{{info.classDiv}}"><p-inputMask mask="99/99/9999" formControlName="{{info.field}}" class="ola" placeholder="{{info.placeHolder}}" slotChar="dd/mm/yyyy"></p-inputMask></div>
+          </div>
           <div class="grid">
             <div class="col-5" *ngIf="btnEntrar">
               <button pButton pRipple type="submit" label="{{nomeBtn}}"></button>

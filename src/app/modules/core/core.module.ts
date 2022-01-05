@@ -13,7 +13,7 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {TableModule} from 'primeng/table';
 import {StyleClassModule} from 'primeng/styleclass';
 import {TabViewModule} from 'primeng/tabview';
-
+import {InputMaskModule} from 'primeng/inputmask';
 @NgModule({
   declarations: [],
   imports: [
@@ -30,7 +30,8 @@ import {TabViewModule} from 'primeng/tabview';
     ProgressSpinnerModule,
     TableModule,
     StyleClassModule,
-    TabViewModule
+    TabViewModule,
+    InputMaskModule
   ],
   exports: [
     CalendarModule,
@@ -44,7 +45,8 @@ import {TabViewModule} from 'primeng/tabview';
     ProgressSpinnerModule,
     TableModule,
     StyleClassModule,
-    TabViewModule
+    TabViewModule,
+    InputMaskModule
   ]
 })
 export class CoreModule { }

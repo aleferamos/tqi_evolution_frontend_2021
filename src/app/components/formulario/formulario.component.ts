@@ -17,6 +17,7 @@ export class FormularioComponent implements OnInit {
 
   @Input() nomeBtn:string;
   @Input() inputList:IClassInput[] = []
+  @Input() inputListDate: IClassInput [] = []
   @Input() inputListEndereco:IClassInput[] = []
   @Input() listaDadosFormulario: FormGroup;
   @Input() listaDadosFormularioEndereco: FormGroup;
