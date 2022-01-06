@@ -1,3 +1,4 @@
+import { ConfirmationService, MessageService, ConfirmEventType} from 'primeng/api';
 import { LoginService } from 'src/app/shared/service/login.service';
 import { ICliente } from './../../../shared/interface/ICliente';
 import { ILocalStorage } from './../../../shared/interface/ILocalStorage';
@@ -8,13 +9,16 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [ConfirmationService, MessageService]
 })
 export class HomeComponent implements OnInit {
 
   constructor(
     private localStorageService: LocalStorageService,
-    private loginService: LoginService) {
+    private loginService: LoginService,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService) {
     this.localStorage = this.localStorageService.getDados()
   }
 
@@ -23,6 +27,9 @@ export class HomeComponent implements OnInit {
   nome: string;
   data: string;
   visibleSidebar1 = false;
+  responsiveOptions;
+  display: boolean = false;
+  email: string = '';
 
   ngOnInit(): void {
     this.nome = this.localStorage.cliente.nome.split(' ')[0]
@@ -45,4 +52,20 @@ export class HomeComponent implements OnInit {
     }, 300);
   }
 
+    showDialog() {
+        this.display = true;
+    }
+
+    HideDialog() {
+
+
+      if(this.email === ''){
+        this.messageService.add({severity:'error', summary:'Service Message', detail:'Você não digitou o email para indicação!'});
+      } else {
+        this.display = false;
+        this.messageService.add({severity:'error', summary:'Service Message', detail:'Amigo indicado com sucesso!'});
+      }
+
+
+  }
 }

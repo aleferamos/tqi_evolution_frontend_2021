@@ -18,7 +18,9 @@ import {SidebarModule} from 'primeng/sidebar';
 import {StepsModule} from 'primeng/steps';
 import {TooltipModule} from 'primeng/tooltip';
 import {SplitterModule} from 'primeng/splitter';
-
+import {CarouselModule} from 'primeng/carousel';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {DialogModule} from 'primeng/dialog';
 @NgModule({
   declarations: [],
   imports: [
@@ -40,7 +42,10 @@ import {SplitterModule} from 'primeng/splitter';
     SidebarModule,
     StepsModule,
     TooltipModule,
-    SplitterModule
+    SplitterModule,
+    CarouselModule,
+    ConfirmDialogModule,
+    DialogModule
   ],
   exports: [
     CalendarModule,
@@ -59,7 +64,10 @@ import {SplitterModule} from 'primeng/splitter';
     SidebarModule,
     StepsModule,
     TooltipModule,
-    SplitterModule
+    SplitterModule,
+    CarouselModule,
+    ConfirmDialogModule,
+    DialogModule
   ]
 })
 export class CoreModule { }

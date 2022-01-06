@@ -43,3 +43,30 @@
   box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
   border-radius: 3px;
 }
+
+
+.icon {
+  margin-top: 0.30em;
+}
+
+::ng-deep .p-toast .p-toast-message.p-toast-message-error {
+  background-color: #005fab;
+  color: white;
+  border: solid rgb(38, 181, 38);
+  border-width: 0 0 0 6px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.1rem;
+}
+
+.menu {
+  width: 10em;
+  height: 3em;
+  position: absolute;
+  transform: rotate(270deg);
+  margin-top: 20em;
+  margin-left: -3.5em;
+  border: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #005fab;
+  font-size: 17px;
+}
