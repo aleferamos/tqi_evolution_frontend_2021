@@ -20,3 +20,21 @@
 </p-sidebar>
 <p-button type="button" class="p-mr-2" (click)="visibleSidebar1 = true" label="Menu"></p-button>
 
+
+
+<p-splitter [style]="{'height': '100vh'}">
+  <ng-template pTemplate>
+    <p-card header="Esta precisando de dinheiro?" [style]="{width: '360px'}" styleClass="p-card-shadow">
+      <ng-template pTemplate="header">
+          <img alt="Card" src="assets/emprestimo.jpg">
+      </ng-template>
+      <p>Temos as melhores ofertas de emprestimo do mercado, com juros baixíssimos vai perder essa oportunidade? faça ja sua proposta clicando logo abaixo!</p>
+      <ng-template pTemplate="footer">
+          <p-button label="Fazer proposta" (click)="redirecionar('emprestimo/solicitar')" icon="pi pi-check"></p-button>
+      </ng-template>
+    </p-card>
+  </ng-template>
+  <ng-template pTemplate>
+
+  </ng-template>
+</p-splitter>

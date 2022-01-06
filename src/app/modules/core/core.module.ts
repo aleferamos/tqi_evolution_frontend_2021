@@ -17,6 +17,7 @@ import {InputMaskModule} from 'primeng/inputmask';
 import {SidebarModule} from 'primeng/sidebar';
 import {StepsModule} from 'primeng/steps';
 import {TooltipModule} from 'primeng/tooltip';
+import {SplitterModule} from 'primeng/splitter';
 
 @NgModule({
   declarations: [],
@@ -38,7 +39,8 @@ import {TooltipModule} from 'primeng/tooltip';
     InputMaskModule,
     SidebarModule,
     StepsModule,
-    TooltipModule
+    TooltipModule,
+    SplitterModule
   ],
   exports: [
     CalendarModule,
@@ -56,7 +58,8 @@ import {TooltipModule} from 'primeng/tooltip';
     InputMaskModule,
     SidebarModule,
     StepsModule,
-    TooltipModule
+    TooltipModule,
+    SplitterModule
   ]
 })
 export class CoreModule { }
