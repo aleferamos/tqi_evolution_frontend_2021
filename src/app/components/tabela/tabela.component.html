@@ -20,7 +20,7 @@
               <span>{{ statusClass(registros[dados.field]) }}</span>
             </div>
 
-            <i class="pi pi-window-maximize" [ngClass]="'detalhes'" *ngIf="dados.icon"></i>
+            <i class="pi pi-window-maximize" (click)="detalhamentoEmprestimo(registros.codigoEmprestimo)" [ngClass]="'detalhes'" *ngIf="dados.icon"></i>
           </td>
       </tr>
   </ng-template>

@@ -3,6 +3,7 @@ import { EmprestimoService } from './../../../shared/service/emprestimo.service'
 import { IEmprestimo } from './../../../shared/interface/IEmprestimo';
 import { IClassTable } from './../../../shared/interface/IClassTable';
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-consultar-todos',
@@ -15,7 +16,9 @@ export class ConsultarTodosComponent implements OnInit {
 
   localStorage: ILocalStorage = {} as ILocalStorage;
 
-  constructor(private emprestimoService: EmprestimoService) {
+  constructor(
+    private emprestimoService: EmprestimoService,
+    ) {
 
     // this.listaEmprestimos = [
     //   {index: this.i, codigoEmprestimo: 1, valor: '2500', quantidadeParcelas: 60, status: 'EM ANÁLISE'},
@@ -32,6 +35,7 @@ export class ConsultarTodosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.obterListaEmprestimos();
   }
 
@@ -46,5 +50,10 @@ export class ConsultarTodosComponent implements OnInit {
     }, 300);
   }
 
-
+  @Output() detalhamentoEmprestimo(idEmprestimo: number){
+    console.log(idEmprestimo);
+    setTimeout(function() {
+      window.location.href = `emprestimo/detalhe/${idEmprestimo}`
+    }, 300);
+  }
 }

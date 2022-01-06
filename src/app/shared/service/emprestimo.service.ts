@@ -24,6 +24,11 @@ export class EmprestimoService {
       {headers: LocalStorageService.prototype.getAuthorization(this.localStorage.token)}).toPromise();
   }
 
+  async buscarEmprestimo(idEmprestimo: number): Promise<IEmprestimo> {
+    const url = `${this.urlBase}/emprestimo/detalhe/${idEmprestimo}`
+    return await this.http.get(url, {headers: LocalStorageService.prototype.getAuthorization(this.localStorage.token)}).toPromise();
+  }
+
   async solicitar(emprestimo: IEmprestimo): Promise<void> {
     const url = `${this.urlBase}/emprestimo/novo`
     await this.http.post(url, emprestimo,

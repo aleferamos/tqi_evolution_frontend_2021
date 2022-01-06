@@ -31,4 +31,6 @@ export class TabelaComponent implements OnInit {
 
     return event
   }
+
+  @Input() detalhamentoEmprestimo(idEmprestimo: number){}
 }
