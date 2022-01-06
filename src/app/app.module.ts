@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TabelaComponent } from './components/tabela/tabela.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TabelaComponent } from './components/tabela/tabela.component';
     TabelaComponent,
     CadastrarComponent,
     CadastrarEmprestimoComponent,
-    HomeComponent
+    HomeComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

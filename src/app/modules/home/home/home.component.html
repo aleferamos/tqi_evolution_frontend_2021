@@ -11,27 +11,7 @@
 </ng-template>
 </p-toast>
 
-<p-sidebar [(visible)]="visibleSidebar1" [modal]="true">
-<div class="grid">
-  <div class="col-6">
-    <h1 class="h1">Olá, {{nome}}</h1>
-  </div>
-  <div class="col-6">
-    <i class="pi pi-sign-out icon-sair" pTooltip="Sair do sistema" (click)="sair()"></i>
-  </div>
-  <div class="col-6">
-    <h3 class="h1">{{data}}</h3>
-  </div>
-
-  <div class="col-12">
-    <button class="btn-menu" (click)="redirecionar('/emprestimo/solicitar')">Solicitar Emprestimo</button>
-  </div>
-  <div class="col-12">
-    <button class="btn-menu" (click)="redirecionar('/emprestimo')" >Consultar Meus Emprestimos</button>
-  </div>
-</div>
-</p-sidebar>
-<button type="button" class="menu" (click)="visibleSidebar1 = true">Menu</button>
+<app-side-bar></app-side-bar>
 
 <p-splitter [style]="{'height': '100vh'}">
   <ng-template pTemplate>

@@ -54,10 +54,11 @@
   text-align: center !important;
 }
 
-.detalhes {
-  cursor: pointer;
+
+i:hover {
+  color: #005fab;
 }
 
-.detalhes:hover {
-  color: #005fab;
+i {
+  cursor: pointer;
 }
