@@ -21,6 +21,7 @@ import {SplitterModule} from 'primeng/splitter';
 import {CarouselModule} from 'primeng/carousel';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {DialogModule} from 'primeng/dialog';
+import {PanelModule} from 'primeng/panel';
 @NgModule({
   declarations: [],
   imports: [
@@ -45,7 +46,8 @@ import {DialogModule} from 'primeng/dialog';
     SplitterModule,
     CarouselModule,
     ConfirmDialogModule,
-    DialogModule
+    DialogModule,
+    PanelModule
   ],
   exports: [
     CalendarModule,
@@ -67,7 +69,8 @@ import {DialogModule} from 'primeng/dialog';
     SplitterModule,
     CarouselModule,
     ConfirmDialogModule,
-    DialogModule
+    DialogModule,
+    PanelModule
   ]
 })
 export class CoreModule { }

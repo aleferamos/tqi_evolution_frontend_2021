@@ -13,8 +13,6 @@ import { DetalheEmprestimoComponent } from './detalhe-emprestimo/detalhe-emprest
     EmprestimoRoutingModule
   ],
   declarations: [
-  
-    DetalheEmprestimoComponent
   ]
 })
 export class EmprestimoModule { }

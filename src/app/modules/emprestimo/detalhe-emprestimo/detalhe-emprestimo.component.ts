@@ -21,13 +21,14 @@ export class DetalheEmprestimoComponent implements OnInit {
   }
 
   emprestimo: IEmprestimo = {} as IEmprestimo;
+  @Output() ngClass = 'menu'
 
   async detalheEmprestimo(): Promise<void> {
     const result = await this.emprestimoService.buscarEmprestimo(parseInt(this.id));
     this.emprestimo = result;
     console.log(this.emprestimo);
-
   }
+
 
 
 }

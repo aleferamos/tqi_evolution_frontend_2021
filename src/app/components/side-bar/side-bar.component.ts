@@ -1,7 +1,7 @@
 import { LoginService } from './../../shared/service/login.service';
 import { LocalStorageService } from './../../shared/service/LocalStorage.service';
 import { ILocalStorage } from './../../shared/interface/ILocalStorage';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
@@ -27,6 +27,7 @@ export class SideBarComponent implements OnInit {
   visibleSidebar1 = false;
   nome: string;
   data: string;
+  @Input() ngClass = 'menu'
 
   redirecionar(url: string){
     setTimeout(function() {

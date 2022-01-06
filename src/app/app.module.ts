@@ -1,3 +1,4 @@
+import { DetalheEmprestimoComponent } from './modules/emprestimo/detalhe-emprestimo/detalhe-emprestimo.component';
 import { HomeComponent } from './modules/home/home/home.component';
 import { CadastrarEmprestimoComponent } from './modules/emprestimo/cadastrar-emprestimo/cadastrar-emprestimo.component';
 import { CadastrarComponent } from './modules/cadastrar/cadastrar/cadastrar.component';
@@ -25,7 +26,8 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     CadastrarComponent,
     CadastrarEmprestimoComponent,
     HomeComponent,
-    SideBarComponent
+    SideBarComponent,
+    DetalheEmprestimoComponent
   ],
   imports: [
     BrowserModule,
