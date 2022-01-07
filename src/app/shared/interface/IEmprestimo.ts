@@ -5,4 +5,6 @@ export interface IEmprestimo {
   quantidadeParcelas?: number;
   dataPrimeiraParcela?: string;
   status?: string;
+  email?: string;
+  renda?: string;
 }

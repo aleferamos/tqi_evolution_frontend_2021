@@ -11,18 +11,26 @@ h1 {
   float: right;
 }
 
-.menu {
-  width: 10em;
-  height: 3em;
-  position: absolute;
-  transform: rotate(270deg);
-  margin-top: 20em;
-  margin-left: -3.5em;
-  border: none;
+::ng-deep .p-panel {
+  padding-left:5em;
+  font-size: 15px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #005fab;
-  font-size: 19px;
-  color: white;
-  z-index: 999;
-  border: solid 1px;
+  margin-top: 1em;
 }
+
+::ng-deep .p-panel p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+::ng-deep .p-panel .p-panel-header {
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  background: #005fab;
+  color: #ffffff;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+

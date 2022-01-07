@@ -12,21 +12,31 @@ export class DetalheEmprestimoComponent implements OnInit {
 
   constructor(
     private emprestimoService: EmprestimoService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+    }
 
   id: string;
+  valorParcelaMes: string;
+  valorDividorQtdeParcelas: string;
+  valorTotalAPagar: string;
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
+    // this.valorParcelaMes =
     this.detalheEmprestimo();
+
+
   }
 
   emprestimo: IEmprestimo = {} as IEmprestimo;
-  @Output() ngClass = 'menu'
 
   async detalheEmprestimo(): Promise<void> {
     const result = await this.emprestimoService.buscarEmprestimo(parseInt(this.id));
     this.emprestimo = result;
-    console.log(this.emprestimo);
+
+    this.valorDividorQtdeParcelas = (((parseFloat(this.emprestimo.valor) / 21) * 0.2 ) + (parseFloat(this.emprestimo.valor) / 21)).toString().substring(0,3)
+    this.valorTotalAPagar = (parseFloat(this.valorDividorQtdeParcelas) * this.emprestimo.quantidadeParcelas).toString()
+
+
   }
 
 

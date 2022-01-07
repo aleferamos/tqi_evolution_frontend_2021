@@ -13,33 +13,41 @@
 
 <app-side-bar></app-side-bar>
 
-<p-splitter [style]="{'height': '100vh'}">
-  <ng-template pTemplate>
-    <p-card header="Programa de indicação" [style]="{width: '360px'}" styleClass="p-card-shadow">
-      <ng-template pTemplate="header">
-          <img alt="Card" src="assets/emprestimo.jpg">
-      </ng-template>
-      <p>Temos as melhores ofertas de emprestimo do mercado, com juros baixíssimos vai perder essa oportunidade? faça ja sua proposta clicando logo abaixo!</p>
-      <ng-template pTemplate="footer">
-          <p-button label="Fazer proposta" (click)="redirecionar('emprestimo/solicitar')" icon="pi pi-check"></p-button>
-      </ng-template>
-    </p-card>
-  </ng-template>
-  <ng-template pTemplate>
+
+<div class="grid">
+  <div class="col-6 sm:col-6 md:col-6">
     <div class="card">
-      <p-card header="Esta precisando de dinheiro?" [style]="{width: '360px'}" styleClass="p-card-shadow">
+      <p-card header="Programa de indicação" [style]="{width: '360px'}" styleClass="p-card-shadow">
         <ng-template pTemplate="header">
-            <img alt="Card" src="assets/indicar.jpg">
+            <img alt="Card" src="assets/emprestimo.jpg">
+        </ng-template>
+        <p>Temos as melhores ofertas de emprestimo do mercado, com juros baixíssimos vai perder essa oportunidade? faça ja sua proposta clicando logo abaixo!</p>
+        <ng-template pTemplate="footer">
+            <p-button label="Fazer proposta" (click)="redirecionar('emprestimo/solicitar')" icon="pi pi-check"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+  <div class="col-6 sm:col-6 md:col-6">
+    <div class="card">
+      <p-card header="Programa de indicação" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+          <img alt="Card" src="assets/indicar.jpg">
         </ng-template>
         <p>A cada amigo indicado que fizer emprestimo, você ganhara até 3% de desconto no proximo emprestimo!</p>
         <ng-template pTemplate="footer">
-            <p-button label="Indicar amigo" (click)="showDialog()" icon="pi pi-check"></p-button>
+          <p-button label="Indicar amigo" (click)="showDialog()" icon="pi pi-check"></p-button>
         </ng-template>
       </p-card>
   </div>
-  </ng-template>
+  </div>
+</div>
 
-</p-splitter>
+
+
+
+
+
 <p-dialog header="Indicar Amigo" [(visible)]="display">
   <input type="text" class="p-inputtext-sm" [(ngModel)]="email" placeholder="Digite o email do amigo" pInputText /><br><br>
   <p-button label="Indicar" (click)="HideDialog()"></p-button>

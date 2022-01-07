@@ -1,23 +1,31 @@
+<app-side-bar></app-side-bar>
 <div class="grid">
   <div class="col-5 sm:col-5 md:col-6">
-    <p-panel header="Codigo do empréstimo"> </p-panel>
+    <p-panel header="Codigo do empréstimo">{{this.emprestimo.codigoEmprestimo}}</p-panel>
   </div>
   <div class="col-5 sm:col-5 md:col-6">
-    <p-panel header="Valor de emprestimo"> </p-panel>
+    <p-panel header="Valor de emprestimo">R$ {{this.emprestimo.valor}}</p-panel>
   </div>
   <div class="col-5 sm:col-5 md:col-6">
-    <p-panel header="Quantidade de parcelas"> </p-panel>
+    <p-panel header="Quantidade de parcelas">{{this.emprestimo.quantidadeParcelas}}</p-panel>
   </div>
   <div class="col-5 sm:col-5 md:col-6">
-    <p-panel header="Data da primeira parcela"> </p-panel>
+    <p-panel header="Data da primeira parcela">{{this.emprestimo.dataPrimeiraParcela}}</p-panel>
   </div>
   <div class="col-5 sm:col-5 md:col-6">
-    <p-panel header="Email do solicitante"> </p-panel>
+    <p-panel header="Email do solicitante"><p>{{this.emprestimo.email}}</p></p-panel>
   </div>
   <div class="col-5 sm:col-5 md:col-6">
-    <p-panel header="Renda do solicitante"> </p-panel>
+    <p-panel header="Renda do solicitante">R$ {{this.emprestimo.renda}}</p-panel>
   </div>
+  <div class="col-5 sm:col-5 md:col-6">
+    <p-panel header="%/Mês">20%</p-panel>
+  </div>
+  <div class="col-5 sm:col-5 md:col-6">
+    <p-panel  header="Valor da Parcela ao Mês" >R$ {{valorDividorQtdeParcelas}}</p-panel>
+  </div>
+  <div class="col-5 sm:col-5 md:col-6">
+    <p-panel  header="Valor Total a pagar" >R$ {{valorTotalAPagar}}</p-panel>
+  </div>
+
 </div>
-<app-side-bar
-[ngClass]="ngClass"
-></app-side-bar>
