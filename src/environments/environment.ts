@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBase: 'http://localhost:8080/sistema-credito'
+  urlBase: 'http://177.153.59.31:8080/sistema-credito'
 };
 
 /*
