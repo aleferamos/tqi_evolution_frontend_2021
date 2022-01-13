@@ -36,6 +36,3 @@ services:
       - "./vue/.env"
     ports:
       - 6000:3000
-© 2022 GitHub, Inc.
-Terms
-Privac
