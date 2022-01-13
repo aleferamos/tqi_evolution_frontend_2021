@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EmprestimoService } from './../../shared/service/emprestimo.service';
 import { IEmprestimo } from './../../shared/interface/IEmprestimo';
 import { CadastrarComponent } from './../../modules/cadastrar/cadastrar/cadastrar.component';
@@ -38,7 +39,8 @@ export class FormularioComponent implements OnInit {
     private loginService: LoginService,
     private messageService: MessageService,
     private localStorageService: LocalStorageService,
-    private emprestimoService: EmprestimoService) {
+    private emprestimoService: EmprestimoService,
+    private router: Router) {
   }
 
   ngOnInit(): void {

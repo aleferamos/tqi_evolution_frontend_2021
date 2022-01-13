@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { IToken } from './../../../shared/interface/IToken';
 import { ILocalStorage } from './../../../shared/interface/ILocalStorage';
 import { LocalStorageService } from './../../../shared/service/LocalStorage.service';
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private loginService: LoginService,
     private messageService: MessageService,
+    private router: Router,
     private localStorageService: LocalStorageService) {
 
       this.localStorage = this.localStorageService.getDados()
@@ -54,7 +56,7 @@ export class LoginComponent implements OnInit {
 
     this.loginService.tokenIsValid(token).then( data => {
        if(data){
-        window.location.href = '/home'
+        this.router.navigate(['']);
       }
     })
 
@@ -69,9 +71,9 @@ export class LoginComponent implements OnInit {
       await this.loginService.login(this.cliente).then(sucesso => {
         this.localStorageService.getCliente();
         const data = new Date();
-        LocalStorageService.prototype.setLocalStorage('data', (moment(data)).format('DD-MM-YYYY'))
-        setTimeout(function() {
-          window.location.href = "/home"
+        localStorage.setItem('data', (moment(data)).format('DD/MM/YYYY'));
+        setTimeout(() => {
+          this.router.navigate(['']);
         }, 800);
 
       }).catch(err => {

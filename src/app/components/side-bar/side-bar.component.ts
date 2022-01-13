@@ -20,7 +20,7 @@ export class SideBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.nome = this.localStorage.cliente.nome.split(' ')[0]
-    this.data = moment(this.localStorage.data).format('MM/DD/YYYY')
+    this.data = this.localStorage.data
   }
 
   localStorage: ILocalStorage = {} as ILocalStorage;
