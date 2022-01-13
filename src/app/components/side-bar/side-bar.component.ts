@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './../../shared/service/login.service';
 import { LocalStorageService } from './../../shared/service/LocalStorage.service';
 import { ILocalStorage } from './../../shared/interface/ILocalStorage';
@@ -13,7 +14,8 @@ export class SideBarComponent implements OnInit {
 
   constructor(
     private localStorageService: LocalStorageService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {
     this.localStorage = this.localStorageService.getDados()
   }
@@ -30,9 +32,9 @@ export class SideBarComponent implements OnInit {
   @Input() ngClass = 'menu'
 
   redirecionar(url: string){
-    setTimeout(function() {
-      window.location.href = url
-    }, 300);
+    setTimeout(() => {
+      this.router.navigate([url]);
+    }, 600);
   }
 
   sair(){

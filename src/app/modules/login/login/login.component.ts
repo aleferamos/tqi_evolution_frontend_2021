@@ -85,8 +85,8 @@ export class LoginComponent implements OnInit {
   }
 
   async cadastrar(): Promise<void> {
-    setTimeout(function() {
-      window.location.href = "/cadastrar"
+    setTimeout(() => {
+      this.router.navigate(['cadastrar']);
     }, 700);
   }
 }

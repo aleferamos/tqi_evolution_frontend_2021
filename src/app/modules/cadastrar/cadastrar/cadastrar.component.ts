@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { IMenuItem } from './../../../shared/interface/IMenuItem';
 import { ICadastrarUsuario } from './../../../shared/interface/ICadastrarUsuario';
 import { CadastroUsuarioService } from './../../../shared/service/CadastroUsuario.service';
@@ -34,7 +35,8 @@ export class CadastrarComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private cadastrarUsuarioService: CadastroUsuarioService,
-    private messageService: MessageService) {
+    private messageService: MessageService,
+    private router: Router) {
     this.listaInputs = [
       {classDiv:'form', type: 'text', inputClass: 'p-inputtext-sm', placeHolder:'Nome', field: 'nome'},
       {classDiv:'form', type: 'text', inputClass: 'p-inputtext-sm', placeHolder:'Email', field: 'email'},
@@ -96,9 +98,9 @@ export class CadastrarComponent implements OnInit {
     await this.cadastrarUsuarioService.cadastrar(this.cadastrarUsuario).then(err => {
       this.messageService.add({severity: 'error',
       detail: "Usuario cadastrado com sucesso" });
-      setTimeout(function() {
-        window.location.href = "/login"
-      }, 1100);
+      setTimeout(() => {
+        this.router.navigate(['login']);
+      }, 900);
 
     }).catch(err => {
       this.messageService.add({severity: 'error',

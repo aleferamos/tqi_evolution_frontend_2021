@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ConfirmationService, MessageService, ConfirmEventType} from 'primeng/api';
 import { LoginService } from 'src/app/shared/service/login.service';
 import { ICliente } from './../../../shared/interface/ICliente';
@@ -17,8 +18,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private localStorageService: LocalStorageService,
     private loginService: LoginService,
-    private confirmationService: ConfirmationService,
-    private messageService: MessageService) {
+    private messageService: MessageService,
+    private router: Router) {
     this.localStorage = this.localStorageService.getDados()
   }
 
@@ -34,14 +35,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.nome = this.localStorage.cliente.nome.split(' ')[0]
     this.data = moment(this.localStorage.data).format('MM/DD/YYYY')
-
-    console.log(this.nome);
-
   }
 
   redirecionar(url: string){
-    setTimeout(function() {
-      window.location.href = url
+    setTimeout(() => {
+      this.router.navigate([url]);
     }, 300);
   }
 
